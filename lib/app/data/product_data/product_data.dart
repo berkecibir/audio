@@ -7,6 +7,10 @@ class ProductData {
       title: 'TMA-2 \nModular \nHeadphone',
       imagePath: AppImages.headPhone,
     ),
+    ProductModel(
+      title: 'TMA-2 \nModular \nHeadphone',
+      imagePath: AppImages.headPhone,
+    ),
   ];
 
   List<ProductModel> getProductsData() {

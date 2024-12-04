@@ -46,10 +46,6 @@ class _SearchPageState extends State<SearchPage> {
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),
-            /* style: GoogleFonts.dmSans(
-              color: AppColors.black,
-              
-            ), */
           ),
           leading: IconButton(
             onPressed: () {

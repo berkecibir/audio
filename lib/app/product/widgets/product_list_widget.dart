@@ -14,10 +14,11 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 16.0,
-        vertical: 8.0,
+        horizontal: 16,
+        vertical: 8,
       ),
       child: Container(
+        width: MediaQuery.of(context).size.width * 0.79,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10.0),
@@ -34,7 +35,7 @@ class ProductCard extends StatelessWidget {
                     Text(
                       product.title,
                       style: const TextStyle(
-                        fontSize: 22,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: AppColors.black,
                       ),
@@ -65,14 +66,12 @@ class ProductCard extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Padding(
-                padding: DevicePadding.medium.onlyRight,
-                child: Image.asset(
-                  product.imagePath,
-                  fit: BoxFit.fill,
-                ),
+            Padding(
+              padding: DevicePadding.medium.onlyRight,
+              child: Image.asset(
+                product.imagePath,
+                //fit: BoxFit.contain,
+                width: 100,
               ),
             ),
           ],

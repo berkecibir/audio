@@ -95,13 +95,12 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: Column(
                   children: [
-                    const SizedBox(height: 16),
+                    DeviceSpacing.xlarge.height,
                     CategoryWidget(categoryViewModel: categoryViewModel),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 25),
                     Expanded(
                       child: ListView.builder(
-                        // shop now ile explore products sayfasına gider
-                        //scrollDirection: Axis.horizontal,
+                        scrollDirection: Axis.horizontal, // Yatay kaydırma
                         itemCount: productViewModel.products.length,
                         itemBuilder: (context, index) {
                           final product = productViewModel.products[index];
@@ -112,9 +111,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SeeProductsWidgets(),
-                    // burada küçük ekranlarda taşma yaşanıyor
-                    // yan çevirince de yine taşma yaşanıyor.
-
                     Expanded(
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
@@ -123,11 +119,10 @@ class _HomePageState extends State<HomePage> {
                         itemBuilder: (context, index) {
                           final feature =
                               featureProductsViewModel.featureProducts[index];
-                          return SizedBox(
-                            height: 200,
-                            child: FeatureProductsWidget(
-                              feature: feature,
-                            ),
+                          return FeatureProductsWidget(
+                            imagePath: feature.imagePath,
+                            title: feature.title,
+                            price: feature.price,
                           );
                         },
                       ),

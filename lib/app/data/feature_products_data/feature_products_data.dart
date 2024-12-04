@@ -9,9 +9,9 @@ class FeatureProductsData {
       price: '350',
     ),
     FeatureProductsModel(
-      imagePath: AppImages.headPhone,
-      title: 'TMA-2 HD Wireless',
-      price: '350',
+      imagePath: AppImages.cable,
+      title: 'CO2 - Cable',
+      price: '150',
     ),
     FeatureProductsModel(
       imagePath: AppImages.headPhone,
