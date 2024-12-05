@@ -11,6 +11,7 @@ import 'package:audio/app/providers/category_view_model/category_view_model.dart
 import 'package:audio/app/providers/feature_products_view_model/feature_prodcuts_view_model.dart';
 import 'package:audio/app/providers/product_view_model/product_view_model.dart';
 import 'package:audio/app/views/profile/page/profile_page.dart';
+import 'package:audio/app/views/shopping/page/shopping_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -38,9 +39,13 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(AppVectors.menuIcon),
+          leading: Builder(
+            builder: (context) => IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: SvgPicture.asset(AppVectors.menuIcon),
+            ),
           ),
           title: SvgPicture.asset(AppVectors.logo),
           actions: [
@@ -58,6 +63,30 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ],
+        ),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              const ListTile(
+                leading: Icon(Icons.home),
+                title: Text('Home'),
+              ),
+              ListTile(
+                leading: const Icon(Icons.shopping_bag),
+                title: const Text('Shop'),
+                onTap: () {
+                  Navigation.push(page: const ShoppingPage());
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: const Text('Profile'),
+                onTap: () {
+                  Navigation.push(page: const ProfilePage());
+                },
+              ),
+            ],
+          ),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,

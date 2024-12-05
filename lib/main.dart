@@ -1,5 +1,7 @@
 import 'package:audio/app/core/routes/app_routes.dart';
 import 'package:audio/app/providers/providers_set_up/providers_set_up.dart';
+import 'package:audio/app/views/home/page/home_page.dart';
+import 'package:audio/app/views/shopping/page/shopping_page.dart';
 import 'package:audio/app/views/splash/page/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
