@@ -21,18 +21,15 @@ class ExploreProductsWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
-                explore.imagePath,
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => const Icon(
-                  Icons.image_not_supported,
-                  size: 50,
-                  color: AppColors.grey,
-                ),
+            child: Image.asset(
+              explore.imagePath,
+              width: double.infinity,
+              height: double.infinity,
+              fit: BoxFit.fitHeight,
+              errorBuilder: (context, error, stackTrace) => const Icon(
+                Icons.image_not_supported,
+                size: 50,
+                color: AppColors.grey,
               ),
             ),
           ),
@@ -41,7 +38,7 @@ class ExploreProductsWidget extends StatelessWidget {
             explore.title,
             style: const TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 16,
+              fontSize: 15,
             ),
             /*  maxLines: 2,
             overflow: TextOverflow.ellipsis, */
@@ -52,22 +49,22 @@ class ExploreProductsWidget extends StatelessWidget {
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               color: AppColors.darkGrey,
-              fontSize: 14,
+              fontSize: 13,
             ),
           ),
           Row(
             children: [
               const Icon(
                 Icons.star,
-                size: 16,
+                size: 15,
                 color: Colors.amber,
               ),
-              const SizedBox(width: 4),
+              DeviceSpacing.small.width,
               Text(
                 explore.rating.toStringAsFixed(1),
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontSize: 13,
                 ),
               ),
               DeviceSpacing.small.width,
@@ -75,7 +72,7 @@ class ExploreProductsWidget extends StatelessWidget {
                 '(${explore.reviewCount} Reviews)', // yorum sayısı
                 style: const TextStyle(
                   color: Colors.grey,
-                  fontSize: 12,
+                  fontSize: 11,
                 ),
               ),
             ],

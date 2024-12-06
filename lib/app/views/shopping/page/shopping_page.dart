@@ -77,27 +77,32 @@ class _ShoppingPageState extends State<ShoppingPage> {
                     ),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(
-                        onPressed: () {
-                          if (itemCount > 0) {
-                            setState(() {
-                              itemCount--;
-                            });
-                          }
-                        },
-                        icon: const Icon(Icons.remove),
+                      Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {
+                              if (itemCount > 0) {
+                                setState(() {
+                                  itemCount--;
+                                });
+                              }
+                            },
+                            icon: const Icon(Icons.remove),
+                          ),
+                          Text('$itemCount'),
+                          IconButton(
+                            onPressed: () {
+                              setState(() {
+                                itemCount++;
+                              });
+                            },
+                            icon: const Icon(Icons.add),
+                          ),
+                        ],
                       ),
-                      Text('$itemCount'),
-                      IconButton(
-                        onPressed: () {
-                          setState(() {
-                            itemCount++;
-                          });
-                        },
-                        icon: const Icon(Icons.add),
-                      ),
-                      const Spacer(),
+                      // const Spacer(),
                       IconButton(
                         onPressed: () {
                           setState(() {

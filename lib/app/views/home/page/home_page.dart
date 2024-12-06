@@ -10,6 +10,7 @@ import 'package:audio/app/product/widgets/product_list_widget.dart';
 import 'package:audio/app/providers/category_view_model/category_view_model.dart';
 import 'package:audio/app/providers/feature_products_view_model/feature_prodcuts_view_model.dart';
 import 'package:audio/app/providers/product_view_model/product_view_model.dart';
+import 'package:audio/app/views/explore_products/page/explore_products_page.dart';
 import 'package:audio/app/views/profile/page/profile_page.dart';
 import 'package:audio/app/views/shopping/page/shopping_page.dart';
 import 'package:flutter/material.dart';
@@ -67,9 +68,13 @@ class _HomePageState extends State<HomePage> {
         drawer: Drawer(
           child: ListView(
             children: [
-              const ListTile(
-                leading: Icon(Icons.home),
-                title: Text('Home'),
+              DeviceSpacing.large.height,
+              ListTile(
+                leading: const Icon(Icons.shop),
+                title: const Text('Product'),
+                onTap: () {
+                  Navigation.push(page: const ExploreProductsPage());
+                },
               ),
               ListTile(
                 leading: const Icon(Icons.shopping_bag),

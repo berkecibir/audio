@@ -1,5 +1,6 @@
 import 'package:audio/app/core/routes/app_routes.dart';
 import 'package:audio/app/providers/providers_set_up/providers_set_up.dart';
+import 'package:audio/app/views/explore_products/page/explore_products_page.dart';
 import 'package:audio/app/views/home/page/home_page.dart';
 import 'package:audio/app/views/shopping/page/shopping_page.dart';
 import 'package:audio/app/views/splash/page/splash_page.dart';
@@ -26,7 +27,7 @@ class MainApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         navigatorKey: Navigation.navigationKey,
         theme: AppTheme.appTheme,
-        initialRoute: SplashPage.id,
+        initialRoute: ShoppingPage.id,
         routes: AppRoutes.routes,
       ),
     );

@@ -5,6 +5,7 @@ import 'package:audio/app/core/widgets/device_spacing/device_spacing.dart';
 import 'package:audio/app/core/widgets/navigation_helper/navigation_helper.dart';
 import 'package:audio/app/providers/explore_products_view_model/explore_products_view_model.dart';
 import 'package:audio/app/providers/product_sort_view_model/product_sort_view_model.dart';
+import 'package:audio/app/views/shopping/page/shopping_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
@@ -41,7 +42,9 @@ class _ExploreProductsPageState extends State<ExploreProductsPage> {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigation.push(page: const ShoppingPage());
+              },
               icon: SvgPicture.asset(
                 AppVectors.shoppingcartIcon,
               ),
